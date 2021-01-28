@@ -1,0 +1,13 @@
+version: '3'
+services:
+  fdb-server-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4500:4500
+    environment:
+      FDB_COORDINATOR:
+      FDB_NETWORKING_MODE: container
+      FDB_COORDINATOR_PORT: 4500
+      FDB_INIT_DB_FILE_CONTENTS: "configure new single memory ; status"
