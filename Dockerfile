@@ -1,4 +1,4 @@
-FROM foundationdb/foundationdb:6.2.28
+FROM foundationdb/foundationdb:6.2.30
 
 # Add entrypoint file
 COPY init_db.bash scripts/
