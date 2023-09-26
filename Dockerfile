@@ -1,12 +1,11 @@
-FROM foundationdb/foundationdb:6.2.30
+FROM foundationdb/foundationdb:7.1.37
 
 # Add entrypoint file
 COPY init_db.bash scripts/
 COPY entrypoint.sh scripts/
 RUN chmod u+x scripts/*.bash
 
-RUN apt-get update && \
-  apt-get install --yes --no-install-recommends netcat
+RUN yum install -y nc
 
 ENV FDB_INIT_DB_FILE_CONTENTS ""
 ENV FDB_INIT_DB_SLEEP "1"
